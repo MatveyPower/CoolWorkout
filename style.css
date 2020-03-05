@@ -5,9 +5,9 @@
 ul{
     list-style: none;
 }
-/* .question1{
-
-} */
+.question1{
+    display: none;
+}
 
 .nameCheckStyle{
     border: 1px solid red;
@@ -22,5 +22,8 @@ ul{
     display: none;
 }
 .question5{
+    display: none;
+}
+.error{
     display: none;
 }
