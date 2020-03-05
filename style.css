@@ -1,3 +1,26 @@
 /* .questions{
     display: none;
 } */
+
+ul{
+    list-style: none;
+}
+/* .question1{
+
+} */
+
+.nameCheckStyle{
+    border: 1px solid red;
+}
+.question2{
+    display: none;
+}
+.question3{
+    display: none;
+}
+.question4{
+    display: none;
+}
+.question5{
+    display: none;
+}

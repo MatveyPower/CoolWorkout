@@ -8,17 +8,25 @@ let count = 0;
 // nameCheck.addEventListener('')
 
 nameCheck.addEventListener('keydown', keyCheck)
+nameCheckButton.addEventListener('click', () => {
+    if (count < 3) {
+        nameCheck.classList.add('nameCheckStyle')
+    }
+})
 
 
 function keyCheck(event) {
+    nameCheck.classList.remove('nameCheckStyle')
     if (event.key !== 'Backspace') {
         count++
-    } else {
+    } else if (count > 0) {
         count--
+
     }
 
-    if (count > 1) {
+    if (count > 0) {
         nameCheckButton.disabled = false
+
     } else {
         nameCheckButton.disabled = true
     }
