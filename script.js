@@ -4,7 +4,7 @@ let fieldForEnteringUserName = document.querySelector('.name-check')
 let buttonToConfirmationUserName = document.querySelector('.name-check-button')
 let blockForDisplayingInputErrors = document.querySelector('.block-for-displaying-input-errors')
 let questions = [...document.querySelectorAll('.question')]
-
+let listOfQuestions = document.querySelector('.questions')
 
 buttonToConfirmationUserName.disabled = true
 
@@ -15,8 +15,9 @@ buttonToConfirmationUserName.addEventListener('click', () => {
         fieldForEnteringUserName.classList.add('displaying-input-errors')
         blockForDisplayingInputErrors.style.display = 'block'
     } else{
-        blockUserName.textContent = `Здравствуйте, ${fieldForEnteringUserName.value}`
-
+        blockUserName.textContent = `Здравствуйте,${fieldForEnteringUserName.value}`
+        listOfQuestions.style.display = 'block'
+        questions[0].style.display = 'block'
     }
 
 })
