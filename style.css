@@ -9,7 +9,7 @@ ul{
     display: none;
 }
 
-.nameCheckStyle{
+.displaying-input-errors{
     border: 1px solid red;
 }
 .question2{
@@ -24,6 +24,6 @@ ul{
 .question5{
     display: none;
 }
-.error{
+.block-for-displaying-input-errors{
     display: none;
 }
