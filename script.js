@@ -10,17 +10,7 @@ buttonToConfirmationUserName.disabled = true
 
 
 fieldForEnteringUserName.addEventListener('input', keyCheck)
-buttonToConfirmationUserName.addEventListener('click', () => {
-    if (fieldForEnteringUserName.value.length < 3) {
-        fieldForEnteringUserName.classList.add('displaying-input-errors')
-        blockForDisplayingInputErrors.style.display = 'block'
-    } else{
-        blockUserName.textContent = `Здравствуйте,${fieldForEnteringUserName.value}`
-        listOfQuestions.style.display = 'block'
-        questions[0].style.display = 'block'
-    }
-
-})
+buttonToConfirmationUserName.addEventListener('click', buttonClick)
 
 
 
@@ -34,7 +24,16 @@ function keyCheck() {
     }
 }
 
-
+function buttonClick() {
+    if (fieldForEnteringUserName.value.length < 3) {
+        fieldForEnteringUserName.classList.add('displaying-input-errors')
+        blockForDisplayingInputErrors.style.display = 'block'
+    } else {
+        blockUserName.textContent = `Здравствуйте,${fieldForEnteringUserName.value}`
+        listOfQuestions.style.display = 'block'
+        questions[0].style.display = 'block'
+    }
+}
 
 
 
