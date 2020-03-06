@@ -1,4 +1,5 @@
 'use strict'
+let blockUserName = document.querySelector('.name-correctness')
 let fieldForEnteringUserName = document.querySelector('.name-check')
 let buttonToConfirmationUserName = document.querySelector('.name-check-button')
 let blockForDisplayingInputErrors = document.querySelector('.block-for-displaying-input-errors')
@@ -13,6 +14,9 @@ buttonToConfirmationUserName.addEventListener('click', () => {
     if (fieldForEnteringUserName.value.length < 3) {
         fieldForEnteringUserName.classList.add('displaying-input-errors')
         blockForDisplayingInputErrors.style.display = 'block'
+    } else{
+        blockUserName.textContent = `Здравствуйте, ${fieldForEnteringUserName.value}`
+
     }
 
 })
