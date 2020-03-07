@@ -1,29 +1,21 @@
 .questions{
-    display: none;
+    display: block;
 }
 
 ul{
     list-style: none;
 }
-.question1{
-    display: none;
+.question1, .question2,.question3,.question4,.question5{
+    display: block;
 }
 
 .displaying-input-errors{
     border: 1px solid red;
 }
-.question2{
+
+/* .block-for-displaying-input-errors{
     display: none;
-}
-.question3{
-    display: none;
-}
-.question4{
-    display: none;
-}
-.question5{
-    display: none;
-}
-.block-for-displaying-input-errors{
+} */
+.display-none{
     display: none;
 }
