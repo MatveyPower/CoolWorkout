@@ -5,20 +5,23 @@ let buttonToConfirmationUserName = document.querySelector('.name-check-button')
 let blockForDisplayingInputErrors = document.querySelector('.block-for-displaying-input-errors')
 let questions = [...document.querySelectorAll('.question')]
 let listOfQuestions = document.querySelector('.questions')
-let InputUserResponseToFirstQuestion = questions[0]
+let InputUserResponseToFirstQuestion = [...questions[0].querySelectorAll('input')]
 let buttonToConfirmationAnswer = document.querySelector('.button-answer')
+let currentUserResponse = ''
 
 
 buttonToConfirmationUserName.disabled = true
 blockForDisplayingInputErrors.classList.add('display-none')
 listOfQuestions.classList.add('display-none')
-InputUserResponseToFirstQuestion.classList.add('display-none')
-InputUserResponseToFirstQuestion.children
+questions.forEach(item => item.classList.add('display-none'))
+
+
 
 fieldForEnteringUserName.addEventListener('input', keyCheck)
 buttonToConfirmationUserName.addEventListener('click', buttonClick)
-buttonToConfirmationAnswer.addEventListener('click', getQuestions)
-InputUserResponseToFirstQuestion.addEventListener('change', () => console.log(InputUserResponseToFirstQuestion.value))
+buttonToConfirmationAnswer.addEventListener('click', confirmQuestions)
+InputUserResponseToFirstQuestion.forEach(item => item.addEventListener('change', getQuestions))
+
 
 function keyCheck() {
     blockForDisplayingInputErrors.classList.add('display-none')
@@ -37,17 +40,20 @@ function buttonClick() {
     } else {
         blockUserName.textContent = `Здравствуйте,${fieldForEnteringUserName.value}`
         listOfQuestions.classList.remove('display-none')
-        InputUserResponseToFirstQuestion.classList.remove('display-none')
-        
-        
-        
-        
+        questions[0].classList.remove('display-none')
+
     }
 }
 
 
-function getQuestions() {
+function getQuestions(event) {
+    console.log(event.currentTarget.value)
+    currentUserResponse =  event.currentTarget.value
+}
 
+function confirmQuestions(){
+       console.log(currentUserResponse)
+    
 
 }
 
