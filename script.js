@@ -7,7 +7,7 @@ let questions = [...document.querySelectorAll('.question')]
 let listOfQuestions = document.querySelector('.questions')
 let InputUserResponseToFirstQuestion = [...questions[0].querySelectorAll('input')]
 let buttonToConfirmationAnswer = document.querySelector('.button-answer')
-let currentUserResponse = ''
+let currentUserResponse = []
 
 
 buttonToConfirmationUserName.disabled = true
@@ -20,7 +20,7 @@ questions.forEach(item => item.classList.add('display-none'))
 fieldForEnteringUserName.addEventListener('input', keyCheck)
 buttonToConfirmationUserName.addEventListener('click', buttonClick)
 buttonToConfirmationAnswer.addEventListener('click', confirmQuestions)
-InputUserResponseToFirstQuestion.forEach(item => item.addEventListener('change', getQuestions))
+listOfQuestions.addEventListener('click', getQuestions)
 
 
 function keyCheck() {
@@ -47,14 +47,23 @@ function buttonClick() {
 
 
 function getQuestions(event) {
-    console.log(event.currentTarget.value)
-    currentUserResponse =  event.currentTarget.value
+    let target = event.target
+    if (target.type != 'radio' && target.type != 'button' && target.type != 'checkbox') {
+        return
+    }
+    if (target.type === 'radio'){
+        currentUserResponse.push(target.value)
+        console.log(currentUserResponse)
+    }
+
+
+
+
+
 }
 
-function confirmQuestions(){
-       console.log(currentUserResponse)
-    
-
+function confirmQuestions() {
+    console.log(currentUserResponse)
 }
 
 
