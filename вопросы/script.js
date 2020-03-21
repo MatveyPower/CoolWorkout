@@ -114,10 +114,10 @@ function getQuestions(event) {
     }
   }
   if (target.type === 'checkbox') {
-  
-      currentUserResponse[1].answer += target.value
-    
-    
+
+    currentUserResponse[1].answer += target.value
+
+
   }
 }
 
@@ -128,23 +128,23 @@ function confirmQuestions() {
   buttonToWatchResult.classList.remove('display-none')
 }
 
-function watchResult(){
-  if (currentUserResponse[0].answer === correctAnswer[0].answer){
+function watchResult() {
+  if (currentUserResponse[0].answer === correctAnswer[0].answer) {
     score++
   }
   currentUserResponse[1].answer = currentUserResponse[1].answer.split('')
   currentUserResponse[1].answer = currentUserResponse[1].answer.filter(item => {
-    if (item === '1' || item === '3'){
+    if (item === '1' || item === '3') {
       return false
-    } else if (item === '2' || item === '4'){
+    } else if (item === '2' || item === '4') {
       return true
     }
-})
+  })
 
-if (currentUserResponse[1].answer.length === 0){
-  score++
-}
-listOfQuestions.textContent = `Ваш счет: ${score} из 2`
+  if (currentUserResponse[1].answer.length === 0) {
+    score++
+  }
+  listOfQuestions.textContent = `Ваш счет: ${score} из 2`
 }
 
 
